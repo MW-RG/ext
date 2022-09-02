@@ -11,7 +11,7 @@ fps = cap.get(cv2.CAP_PROP_FPS)
 length = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
 
 print(fps)
-secperframe = 3
+secperframe = 2
 
 #프레임을 저장할 디렉토리를 생성
 try:
@@ -25,7 +25,7 @@ if cap.isOpened():
     while True:
         ret, frame = cap.read()
         if current_frame % (round(fps) / secperframe) == 0:
-            name = f'./{filename[:-4]}/frame{current_frame}.jpg'
+            name = f'./{filename[:-4]}/{filename[:-4]}_f{current_frame}.jpg'
             print(f"Creating file… {name}")
 
             if length >= current_frame :
